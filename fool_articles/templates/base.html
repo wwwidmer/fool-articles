@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> </head>
+
+  <body>
+    {% block content %} {% endblock %}
+  </body>
+
+  {% load static %}
+  <script src="{% static 'app.js' %}"></script>
+  <link
+    rel="stylesheet"
+    text="text/css"
+    href="{% static 'stylesheets/style.css' %}"
+  />
+</html>
