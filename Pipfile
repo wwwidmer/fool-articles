@@ -16,6 +16,7 @@ pytest = "*"
 pytest-django = "*"
 env-file = "*"
 flake8 = "*"
+jsonschema = "*"
 
 [requires]
 python_version = "3.6"

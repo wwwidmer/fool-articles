@@ -1,0 +1,912 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "count",
+    "next",
+    "previous",
+    "results",
+    "expandable",
+    "expanded"
+  ],
+  "properties": {
+    "count": {
+      "$id": "#/properties/count",
+      "type": "integer",
+      "title": "The Count Schema",
+      "default": 0,
+      "examples": [381218]
+    },
+    "next": {
+      "$id": "#/properties/next",
+      "type": "string",
+      "title": "The Next Schema",
+      "default": "",
+      "examples": [
+        "http://api.fool.com/api/content/?expand=%2A&format=json&full_content=true&limit=10&offset=10&product_id=0"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "previous": {
+      "$id": "#/properties/previous",
+      "type": "null",
+      "title": "The Previous Schema",
+      "default": null,
+      "examples": [null]
+    },
+    "results": {
+      "$id": "#/properties/results",
+      "type": "array",
+      "title": "The Results Schema",
+      "items": {
+        "$id": "#/properties/results/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "disclosure",
+          "promo",
+          "body",
+          "visibility",
+          "article_type",
+          "publish_at",
+          "path",
+          "static_page",
+          "author_override",
+          "uuid",
+          "created",
+          "headline",
+          "modified",
+          "product_id",
+          "instruments",
+          "authors",
+          "bureau",
+          "collection",
+          "tags",
+          "recommendations",
+          "images",
+          "video",
+          "pitch",
+          "links",
+          "byline"
+        ],
+        "properties": {
+          "disclosure": {
+            "$id": "#/properties/results/items/properties/disclosure",
+            "type": "string",
+            "title": "The Disclosure Schema",
+            "default": "",
+            "examples": [
+              "<p><em><a href=\"http://my.fool.com/profile/JohnMaxfield37/info.aspx\">John Maxfield</a> has no position in any of the stocks mentioned. The Motley Fool has no position in any of the stocks mentioned. The Motley Fool has a <a href=\"http://www.fool.com/Legal/fool-disclosure-policy.aspx\">disclosure policy</a>.</em></p>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "promo": {
+            "$id": "#/properties/results/items/properties/promo",
+            "type": "string",
+            "title": "The Promo Schema",
+            "default": "",
+            "examples": [
+              "Three reasons to think that Goldman Sachs’ stock is reasonably priced."
+            ],
+            "pattern": "^(.*)$"
+          },
+          "body": {
+            "$id": "#/properties/results/items/properties/body",
+            "type": "string",
+            "title": "The Body Schema",
+            "default": "",
+            "examples": [
+              "<p>Buying any stocks right now is a brave move, given the rally in the market since this time last year. But if you're going to do so, then it's important to keep <a href=\"https://www.fool.com/investing/2017/04/10/this-chart-reveals-how-bank-stocks-are-valued.aspx\">valuation</a> and recent performance in mind.</p>\n<p>With this in mind, let's see if <strong>Goldman Sachs</strong>' <span class=\"ticker\" data-id=\"203781\">(NYSE: GS)</span> stock is worth a look.</p>\n<div class=\"image\"><img alt=\":Goldman Sachs Tower at Exchange Place in Jersey City, New Jersey.\" src=\"https://g.foolcdn.com/editorial/images/463175/goldman-sachs-tower_large.jpg\"/>\n<p class=\"caption\">:Goldman Sachs Tower at Exchange Place in Jersey City, New Jersey. Image source: Getty Images.</p>\n</div>\n<h2><strong>Valuing Goldman's shares</strong></h2>\n<p>When it comes to valuation, you'd be excused for thinking that Goldman Sachs' stock is reasonably priced, at least compared to other bank stocks. You can see this by looking at the two valuation metrics that bank investors rely on.</p>\n<p>The first is the price-to-book value ratio, which is calculated by dividing a bank's share price by its book value per share. If a bank's share price is higher than its book value per share, then it's said to trade at a premium to book value. If the reverse is true, then it's said to trade at a discount.</p>\n<p>Goldman Sachs' price-to-book value ratio is 1.21, according to YCharts.com. That means it trades for a 21% premium to book value. That may seem high, but it's actually lower than the average big bank stock, which trades for a 33% premium to book value. On this score, then, Goldman Sachs' stock does indeed seem to be reasonably priced.</p>\n<p>The same is true if you look at another way to measure a bank stock's value -- the price-to-earnings ratio, which is calculated by dividing a bank's stock price by its earnings per share. Goldman Sachs' P/E ratio comes in at 12.64. This means that it costs $12.64 to buy every $1 of the investment bank's earnings over the next 12 months.</p>\n<p>That's a lot of money to pay for only a single dollar's worth of earnings, but it's still less than you'd have to pay to buy the typical big bank stock. Among the 20 biggest banks in the country, the average bank stock trades for 14.22 times forward earnings. On this score, too, Goldman Sachs' stock seems to be reasonably priced.</p>\n<h2><strong>Understanding Goldman's valuation</strong></h2>\n<p>Just because Goldman Sachs' shares may seem cheap doesn't mean that they necessarily are. I say that because its stock has lagged its peers this year.</p>\n<p>Since the beginning of 2017, Goldman Sachs' stock price has advanced by only 0.5%. To put that in perspective, the average big bank stock is up 7% over the same stretch. On the one hand, this seems to suggest that Goldman Sachs has more upside potential. But on the other hand, it suggests that there may be fundamental issues going on at the bank.</p>\n<p><a href=\"https://ycharts.com/companies/KBWB/chart/\"><img alt=\"KBWB Chart\" src=\"https://media.ycharts.com/charts/f189e9577cf493db54bb070f133188b6.png\"/></a></p>\n<p class=\"caption\"><a href=\"https://ycharts.com/companies/KBWB\">KBWB</a> data by <a href=\"https://ycharts.com\">YCharts</a>.</p>\n<p>There's no doubt that Goldman Sachs is one of the leaders in the financial services industry, especially among firms with operations on Wall Street. But that doesn't mean that everything always goes well for the bank.</p>\n<p>In the most recent quarter, the bank saw revenue from its bread-and-butter fixed-income trading unit <a href=\"https://www.fool.com/investing/2017/10/17/goldman-sachs-earnings-bank-combats-trading-drop-w.aspx\">decline 26%</a> compared to the year-ago quarter. The net result was that revenue in the unit was down $512 million in the three months ended Sept. 30. That alone would have amounted to a 6.3% drop in the bank's top line if other operating units hadn't made up for the shortfall elsewhere.</p>\n<p>In short, while shares of Goldman Sachs seem on their face to be reasonably priced relative to other big bank stocks, there's a reason for that. It's impossible to say if trading activity will pick up anytime soon for banks. But if it does, betting on Goldman Sachs right now could one day pay off.</p>\n<p>{%sfr%}</p>"
+            ],
+            "pattern": ".*"
+          },
+          "visibility": {
+            "$id": "#/properties/results/items/properties/visibility",
+            "type": "integer",
+            "title": "The Visibility Schema",
+            "default": 0,
+            "examples": [100]
+          },
+          "article_type": {
+            "$id": "#/properties/results/items/properties/article_type",
+            "type": "string",
+            "title": "The Article_type Schema",
+            "default": "",
+            "examples": ["article"],
+            "pattern": ".*"
+          },
+          "publish_at": {
+            "$id": "#/properties/results/items/properties/publish_at",
+            "type": "string",
+            "title": "The Publish_at Schema",
+            "default": "",
+            "examples": ["2017-11-10T15:10:00Z"],
+            "pattern": ".*"
+          },
+          "path": {
+            "$id": "#/properties/results/items/properties/path",
+            "type": "string",
+            "title": "The Path Schema",
+            "default": "",
+            "examples": [
+              "/investing/2017/11/10/is-goldman-sachs-stock-worth-a-look.aspx"
+            ],
+            "pattern": ".*"
+          },
+          "static_page": {
+            "$id": "#/properties/results/items/properties/static_page",
+            "type": "boolean",
+            "title": "The Static_page Schema",
+            "default": false,
+            "examples": [false]
+          },
+          "author_override": {
+            "$id": "#/properties/results/items/properties/author_override",
+            "type": "null",
+            "title": "The Author_override Schema",
+            "default": null,
+            "examples": [null]
+          },
+          "uuid": {
+            "$id": "#/properties/results/items/properties/uuid",
+            "type": "string",
+            "title": "The Uuid Schema",
+            "default": "",
+            "examples": ["f52c15f2-c5a9-11e7-8889-0050569d4be0"],
+            "pattern": ".*"
+          },
+          "created": {
+            "$id": "#/properties/results/items/properties/created",
+            "type": "string",
+            "title": "The Created Schema",
+            "default": "",
+            "examples": ["2017-11-10T15:10:02Z"],
+            "pattern": ".*"
+          },
+          "headline": {
+            "$id": "#/properties/results/items/properties/headline",
+            "type": "string",
+            "title": "The Headline Schema",
+            "default": "",
+            "examples": ["Is Goldman Sachs' Stock Worth a Look?"],
+            "pattern": ".*"
+          },
+          "modified": {
+            "$id": "#/properties/results/items/properties/modified",
+            "type": "string",
+            "title": "The Modified Schema",
+            "default": "",
+            "examples": ["2017-11-10T15:10:02Z"],
+            "pattern": ".*"
+          },
+          "product_id": {
+            "$id": "#/properties/results/items/properties/product_id",
+            "type": "integer",
+            "title": "The Product_id Schema",
+            "default": 0,
+            "examples": [0]
+          },
+          "instruments": {
+            "$id": "#/properties/results/items/properties/instruments",
+            "type": "array",
+            "title": "The Instruments Schema",
+            "items": {
+              "$id": "#/properties/results/items/properties/instruments/items",
+              "type": "object",
+              "title": "The Items Schema",
+              "required": [
+                "instrument_id",
+                "links",
+                "asset_class",
+                "exchange",
+                "symbol",
+                "primary",
+                "seo_name",
+                "company_name",
+                "syndicate",
+                "valid"
+              ],
+              "properties": {
+                "instrument_id": {
+                  "$id": "#/properties/results/items/properties/instruments/items/properties/instrument_id",
+                  "type": "integer",
+                  "title": "The Instrument_id Schema",
+                  "default": 0,
+                  "examples": [203781]
+                },
+                "links": {
+                  "$id": "#/properties/results/items/properties/instruments/items/properties/links",
+                  "type": "object",
+                  "title": "The Links Schema",
+                  "required": ["content", "self"],
+                  "properties": {
+                    "content": {
+                      "$id": "#/properties/results/items/properties/instruments/items/properties/links/properties/content",
+                      "type": "string",
+                      "title": "The Content Schema",
+                      "default": "",
+                      "examples": [
+                        "http://api.fool.com/api/content?instrument_ids=203781"
+                      ],
+                      "pattern": ".*"
+                    },
+                    "self": {
+                      "$id": "#/properties/results/items/properties/instruments/items/properties/links/properties/self",
+                      "type": "string",
+                      "title": "The Self Schema",
+                      "default": "",
+                      "examples": [
+                        "http://api.fool.com/api/instruments/203781"
+                      ],
+                      "pattern": ".*"
+                    }
+                  }
+                },
+                "asset_class": {
+                  "$id": "#/properties/results/items/properties/instruments/items/properties/asset_class",
+                  "type": "string",
+                  "title": "The Asset_class Schema",
+                  "default": "",
+                  "examples": ["Stock"],
+                  "pattern": ".*"
+                },
+                "exchange": {
+                  "$id": "#/properties/results/items/properties/instruments/items/properties/exchange",
+                  "type": "string",
+                  "title": "The Exchange Schema",
+                  "default": "",
+                  "examples": ["NYSE"],
+                  "pattern": ".*"
+                },
+                "symbol": {
+                  "$id": "#/properties/results/items/properties/instruments/items/properties/symbol",
+                  "type": "string",
+                  "title": "The Symbol Schema",
+                  "default": "",
+                  "examples": ["GS"],
+                  "pattern": ".*"
+                },
+                "primary": {
+                  "$id": "#/properties/results/items/properties/instruments/items/properties/primary",
+                  "type": "boolean",
+                  "title": "The Primary Schema",
+                  "default": false,
+                  "examples": [true]
+                },
+                "seo_name": {
+                  "$id": "#/properties/results/items/properties/instruments/items/properties/seo_name",
+                  "type": "string",
+                  "title": "The Seo_name Schema",
+                  "default": "",
+                  "examples": ["goldman-sachs"],
+                  "pattern": ".*"
+                },
+                "company_name": {
+                  "$id": "#/properties/results/items/properties/instruments/items/properties/company_name",
+                  "type": "string",
+                  "title": "The Company_name Schema",
+                  "default": "",
+                  "examples": ["Goldman Sachs"],
+                  "pattern": ".*"
+                },
+                "syndicate": {
+                  "$id": "#/properties/results/items/properties/instruments/items/properties/syndicate",
+                  "type": "boolean",
+                  "title": "The Syndicate Schema",
+                  "default": false,
+                  "examples": [true]
+                },
+                "valid": {
+                  "$id": "#/properties/results/items/properties/instruments/items/properties/valid",
+                  "type": "boolean",
+                  "title": "The Valid Schema",
+                  "default": false,
+                  "examples": [true]
+                }
+              }
+            }
+          },
+          "authors": {
+            "$id": "#/properties/results/items/properties/authors",
+            "type": "array",
+            "title": "The Authors Schema",
+            "items": {
+              "$id": "#/properties/results/items/properties/authors/items",
+              "type": "object",
+              "title": "The Items Schema",
+              "required": [
+                "username",
+                "last_name",
+                "links",
+                "fool_uid",
+                "primary",
+                "twitter_username",
+                "small_avatar_url",
+                "long_bio",
+                "first_name",
+                "byline",
+                "uuid",
+                "contributor_type",
+                "large_avatar_url",
+                "short_bio",
+                "author_id",
+                "email"
+              ],
+              "properties": {
+                "username": {
+                  "$id": "#/properties/results/items/properties/authors/items/properties/username",
+                  "type": "string",
+                  "title": "The Username Schema",
+                  "default": "",
+                  "examples": ["JohnMaxfield37"],
+                  "pattern": ".*"
+                },
+                "last_name": {
+                  "$id": "#/properties/results/items/properties/authors/items/properties/last_name",
+                  "type": "string",
+                  "title": "The Last_name Schema",
+                  "default": "",
+                  "examples": ["Maxfield"],
+                  "pattern": ".*"
+                },
+                "links": {
+                  "$id": "#/properties/results/items/properties/authors/items/properties/links",
+                  "type": "object",
+                  "title": "The Links Schema",
+                  "required": ["content", "self"],
+                  "properties": {
+                    "content": {
+                      "$id": "#/properties/results/items/properties/authors/items/properties/links/properties/content",
+                      "type": "string",
+                      "title": "The Content Schema",
+                      "default": "",
+                      "examples": [
+                        "http://api.fool.com/api/content?primary_author_id=1928"
+                      ],
+                      "pattern": ".*"
+                    },
+                    "self": {
+                      "$id": "#/properties/results/items/properties/authors/items/properties/links/properties/self",
+                      "type": "string",
+                      "title": "The Self Schema",
+                      "default": "",
+                      "examples": ["http://api.fool.com/api/authors/1928"],
+                      "pattern": ".*"
+                    }
+                  }
+                },
+                "fool_uid": {
+                  "$id": "#/properties/results/items/properties/authors/items/properties/fool_uid",
+                  "type": "integer",
+                  "title": "The Fool_uid Schema",
+                  "default": 0,
+                  "examples": [1593347483]
+                },
+                "primary": {
+                  "$id": "#/properties/results/items/properties/authors/items/properties/primary",
+                  "type": "boolean",
+                  "title": "The Primary Schema",
+                  "default": false,
+                  "examples": [true]
+                },
+                "twitter_username": {
+                  "$id": "#/properties/results/items/properties/authors/items/properties/twitter_username",
+                  "type": ["string", "null"],
+                  "title": "The Twitter_username Schema",
+                  "default": "",
+                  "examples": ["@wwwidmer"]
+                },
+                "small_avatar_url": {
+                  "$id": "#/properties/results/items/properties/authors/items/properties/small_avatar_url",
+                  "type": "string",
+                  "title": "The Small_avatar_url Schema",
+                  "default": "",
+                  "examples": [
+                    "http://g.foolcdn.com/avatar/1593347483/small.ashx"
+                  ],
+                  "pattern": ".*"
+                },
+                "long_bio": {
+                  "$id": "#/properties/results/items/properties/authors/items/properties/long_bio",
+                  "type": ["string", "null"],
+
+                  "title": "The Long_bio Schema",
+                  "default": null,
+                  "examples": [null]
+                },
+                "first_name": {
+                  "$id": "#/properties/results/items/properties/authors/items/properties/first_name",
+                  "type": "string",
+                  "title": "The First_name Schema",
+                  "default": "",
+                  "examples": ["John"],
+                  "pattern": ".*"
+                },
+                "byline": {
+                  "$id": "#/properties/results/items/properties/authors/items/properties/byline",
+                  "type": "string",
+                  "title": "The Byline Schema",
+                  "default": "",
+                  "examples": ["John Maxfield"],
+                  "pattern": ".*"
+                },
+                "uuid": {
+                  "$id": "#/properties/results/items/properties/authors/items/properties/uuid",
+                  "type": "string",
+                  "title": "The Uuid Schema",
+                  "default": "",
+                  "examples": ["41f68dbc-0a8e-11e3-b1dc-0050569d4333"],
+                  "pattern": ".*"
+                },
+                "contributor_type": {
+                  "$id": "#/properties/results/items/properties/authors/items/properties/contributor_type",
+                  "type": "string",
+                  "title": "The Contributor_type Schema",
+                  "default": "",
+                  "examples": ["individual"],
+                  "pattern": ".*"
+                },
+                "large_avatar_url": {
+                  "$id": "#/properties/results/items/properties/authors/items/properties/large_avatar_url",
+                  "type": "string",
+                  "title": "The Large_avatar_url Schema",
+                  "default": "",
+                  "examples": [
+                    "http://g.foolcdn.com/avatar/1593347483/large.ashx"
+                  ],
+                  "pattern": ".*"
+                },
+                "short_bio": {
+                  "$id": "#/properties/results/items/properties/authors/items/properties/short_bio",
+                  "type": "string",
+                  "title": "The Short_bio Schema",
+                  "default": "",
+                  "examples": [
+                    "I write about banks, trying my best to balance the good and the bad."
+                  ],
+                  "pattern": ".*"
+                },
+                "author_id": {
+                  "$id": "#/properties/results/items/properties/authors/items/properties/author_id",
+                  "type": "integer",
+                  "title": "The Author_id Schema",
+                  "default": 0,
+                  "examples": [1928]
+                },
+                "email": {
+                  "$id": "#/properties/results/items/properties/authors/items/properties/email",
+                  "type": "string",
+                  "title": "The Email Schema",
+                  "default": "",
+                  "examples": ["jmaxfield@fool.com"],
+                  "pattern": ".*"
+                }
+              }
+            }
+          },
+          "bureau": {
+            "$id": "#/properties/results/items/properties/bureau",
+            "type": "object",
+            "title": "The Bureau Schema",
+            "required": ["uuid", "slug", "name", "links"],
+            "properties": {
+              "uuid": {
+                "$id": "#/properties/results/items/properties/bureau/properties/uuid",
+                "type": "string",
+                "title": "The Uuid Schema",
+                "default": "",
+                "examples": ["ad1e57a4-06a7-11e3-a4aa-0050569d4333"],
+                "pattern": ".*"
+              },
+              "slug": {
+                "$id": "#/properties/results/items/properties/bureau/properties/slug",
+                "type": "string",
+                "title": "The Slug Schema",
+                "default": "",
+                "examples": ["usmf-financials"],
+                "pattern": ".*"
+              },
+              "name": {
+                "$id": "#/properties/results/items/properties/bureau/properties/name",
+                "type": "string",
+                "title": "The Name Schema",
+                "default": "",
+                "examples": ["Financials"],
+                "pattern": ".*"
+              },
+              "links": {
+                "$id": "#/properties/results/items/properties/bureau/properties/links",
+                "type": "object",
+                "title": "The Links Schema",
+                "required": ["content", "self"],
+                "properties": {
+                  "content": {
+                    "$id": "#/properties/results/items/properties/bureau/properties/links/properties/content",
+                    "type": "string",
+                    "title": "The Content Schema",
+                    "default": "",
+                    "examples": [
+                      "http://api.fool.com/api/content?bureau_uuid=ad1e57a4-06a7-11e3-a4aa-0050569d4333"
+                    ],
+                    "pattern": ".*"
+                  },
+                  "self": {
+                    "$id": "#/properties/results/items/properties/bureau/properties/links/properties/self",
+                    "type": "string",
+                    "title": "The Self Schema",
+                    "default": "",
+                    "examples": [
+                      "http://api.fool.com/api/bureaus/ad1e57a4-06a7-11e3-a4aa-0050569d4333"
+                    ],
+                    "pattern": ".*"
+                  }
+                }
+              }
+            }
+          },
+          "collection": {
+            "$id": "#/properties/results/items/properties/collection",
+            "type": "object",
+            "title": "The Collection Schema",
+            "required": ["path", "uuid", "slug", "name", "links"],
+            "properties": {
+              "path": {
+                "$id": "#/properties/results/items/properties/collection/properties/path",
+                "type": "string",
+                "title": "The Path Schema",
+                "default": "",
+                "examples": ["/investing"],
+                "pattern": ".*"
+              },
+              "uuid": {
+                "$id": "#/properties/results/items/properties/collection/properties/uuid",
+                "type": "string",
+                "title": "The Uuid Schema",
+                "default": "",
+                "examples": ["bb3ea16c-1c58-11e6-9006-0050569d4be0"],
+                "pattern": ".*"
+              },
+              "slug": {
+                "$id": "#/properties/results/items/properties/collection/properties/slug",
+                "type": "string",
+                "title": "The Slug Schema",
+                "default": "",
+                "examples": ["investing"],
+                "pattern": ".*"
+              },
+              "name": {
+                "$id": "#/properties/results/items/properties/collection/properties/name",
+                "type": "string",
+                "title": "The Name Schema",
+                "default": "",
+                "examples": ["/investing"],
+                "pattern": ".*"
+              },
+              "links": {
+                "$id": "#/properties/results/items/properties/collection/properties/links",
+                "type": "object",
+                "title": "The Links Schema",
+                "required": ["content", "self"],
+                "properties": {
+                  "content": {
+                    "$id": "#/properties/results/items/properties/collection/properties/links/properties/content",
+                    "type": "string",
+                    "title": "The Content Schema",
+                    "default": "",
+                    "examples": [
+                      "http://api.fool.com/api/content?collection_uuid=bb3ea16c-1c58-11e6-9006-0050569d4be0"
+                    ],
+                    "pattern": ".*"
+                  },
+                  "self": {
+                    "$id": "#/properties/results/items/properties/collection/properties/links/properties/self",
+                    "type": "string",
+                    "title": "The Self Schema",
+                    "default": "",
+                    "examples": [
+                      "http://api.fool.com/api/collections/bb3ea16c-1c58-11e6-9006-0050569d4be0"
+                    ],
+                    "pattern": ".*"
+                  }
+                }
+              }
+            }
+          },
+          "tags": {
+            "$id": "#/properties/results/items/properties/tags",
+            "type": "array",
+            "title": "The Tags Schema",
+            "items": {
+              "$id": "#/properties/results/items/properties/tags/items",
+              "type": "object",
+              "title": "The Items Schema",
+              "required": ["uuid", "slug", "name", "tag_type", "links"],
+              "properties": {
+                "uuid": {
+                  "$id": "#/properties/results/items/properties/tags/items/properties/uuid",
+                  "type": "string",
+                  "title": "The Uuid Schema",
+                  "default": "",
+                  "examples": ["78aa4c44-d4f4-11e5-86ff-0050569d32b9"],
+                  "pattern": ".*"
+                },
+                "slug": {
+                  "$id": "#/properties/results/items/properties/tags/items/properties/slug",
+                  "type": "string",
+                  "title": "The Slug Schema",
+                  "default": "",
+                  "examples": ["msn"],
+                  "pattern": ".*"
+                },
+                "name": {
+                  "$id": "#/properties/results/items/properties/tags/items/properties/name",
+                  "type": "string",
+                  "title": "The Name Schema",
+                  "default": "",
+                  "examples": ["MSN"],
+                  "pattern": ".*"
+                },
+                "tag_type": {
+                  "$id": "#/properties/results/items/properties/tags/items/properties/tag_type",
+                  "type": "object",
+                  "title": "The Tag_type Schema",
+                  "required": ["name", "slug"],
+                  "properties": {
+                    "name": {
+                      "$id": "#/properties/results/items/properties/tags/items/properties/tag_type/properties/name",
+                      "type": "string",
+                      "title": "The Name Schema",
+                      "default": "",
+                      "examples": ["Syndication Partner"],
+                      "pattern": ".*"
+                    },
+                    "slug": {
+                      "$id": "#/properties/results/items/properties/tags/items/properties/tag_type/properties/slug",
+                      "type": "string",
+                      "title": "The Slug Schema",
+                      "default": "",
+                      "examples": ["syndication-partner"],
+                      "pattern": ".*"
+                    }
+                  }
+                },
+                "links": {
+                  "$id": "#/properties/results/items/properties/tags/items/properties/links",
+                  "type": "object",
+                  "title": "The Links Schema",
+                  "required": ["content", "self"],
+                  "properties": {
+                    "content": {
+                      "$id": "#/properties/results/items/properties/tags/items/properties/links/properties/content",
+                      "type": "string",
+                      "title": "The Content Schema",
+                      "default": "",
+                      "examples": [
+                        "http://api.fool.com/api/content?tag_uuids=78aa4c44-d4f4-11e5-86ff-0050569d32b9"
+                      ],
+                      "pattern": ".*"
+                    },
+                    "self": {
+                      "$id": "#/properties/results/items/properties/tags/items/properties/links/properties/self",
+                      "type": "string",
+                      "title": "The Self Schema",
+                      "default": "",
+                      "examples": [
+                        "http://api.fool.com/api/tags/78aa4c44-d4f4-11e5-86ff-0050569d32b9"
+                      ],
+                      "pattern": ".*"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "recommendations": {
+            "$id": "#/properties/results/items/properties/recommendations",
+            "type": "array",
+            "title": "The Recommendations Schema"
+          },
+          "images": {
+            "$id": "#/properties/results/items/properties/images",
+            "type": "array",
+            "title": "The Images Schema",
+            "items": {
+              "$id": "#/properties/results/items/properties/images/items",
+              "type": "object",
+              "title": "The Items Schema",
+              "required": [
+                "name",
+                "created",
+                "url",
+                "image",
+                "modified",
+                "featured",
+                "uuid"
+              ],
+              "properties": {
+                "name": {
+                  "$id": "#/properties/results/items/properties/images/items/properties/name",
+                  "type": "string",
+                  "title": "The Name Schema",
+                  "default": "",
+                  "examples": ["Goldman Sachs Tower"],
+                  "pattern": ".*"
+                },
+                "created": {
+                  "$id": "#/properties/results/items/properties/images/items/properties/created",
+                  "type": "string",
+                  "title": "The Created Schema",
+                  "default": "",
+                  "examples": ["2017-11-10T00:02:01.068582Z"],
+                  "pattern": ".*"
+                },
+                "url": {
+                  "$id": "#/properties/results/items/properties/images/items/properties/url",
+                  "type": "string",
+                  "title": "The Url Schema",
+                  "default": "",
+                  "examples": [
+                    "https://g.foolcdn.com/editorial/images/463175/goldman-sachs-tower.jpg"
+                  ],
+                  "pattern": ".*"
+                },
+                "image": {
+                  "$id": "#/properties/results/items/properties/images/items/properties/image",
+                  "type": "string",
+                  "title": "The Image Schema",
+                  "default": "",
+                  "examples": [
+                    "https://g.foolcdn.com/editorial/images/463175/goldman-sachs-tower.jpg"
+                  ],
+                  "pattern": ".*"
+                },
+                "modified": {
+                  "$id": "#/properties/results/items/properties/images/items/properties/modified",
+                  "type": "string",
+                  "title": "The Modified Schema",
+                  "default": "",
+                  "examples": ["2017-11-10T00:02:04.950918Z"],
+                  "pattern": ".*"
+                },
+                "featured": {
+                  "$id": "#/properties/results/items/properties/images/items/properties/featured",
+                  "type": "boolean",
+                  "title": "The Featured Schema",
+                  "default": false,
+                  "examples": [true]
+                },
+                "uuid": {
+                  "$id": "#/properties/results/items/properties/images/items/properties/uuid",
+                  "type": "string",
+                  "title": "The Uuid Schema",
+                  "default": "",
+                  "examples": ["6069e632-c5aa-11e7-982d-0050569d32b9"],
+                  "pattern": ".*"
+                }
+              }
+            }
+          },
+          "video": {
+            "$id": "#/properties/results/items/properties/video",
+            "type": "null",
+            "title": "The Video Schema",
+            "default": null,
+            "examples": [null]
+          },
+          "pitch": {
+            "$id": "#/properties/results/items/properties/pitch",
+            "type": "object",
+            "title": "The Pitch Schema",
+            "required": ["text", "id"],
+            "properties": {
+              "text": {
+                "$id": "#/properties/results/items/properties/pitch/properties/text",
+                "type": "string",
+                "title": "The Text Schema",
+                "default": "",
+                "examples": [
+                  "<p><strong>10 stocks we like better than Goldman Sachs</strong><br />When investing geniuses David and Tom Gardner have a stock tip, it can pay to listen. After all, the newsletter they have run for over a decade, <em>Motley Fool Stock Advisor</em>, has tripled the market.*</p>\n<p>David and Tom just revealed what they believe are the <a href=\"http://infotron.fool.com/infotrack/click?url=https%3A%2F%2Fwww.fool.com%2Fmms%2Fmark%2Fe-foolcom-sa-bbn-static%3Faid%3D8867%26source%3Disaeditxt0010449%26ftm_cam%3Dsa-bbn-evergreen%26ftm_pit%3D6312%26ftm_veh%3Dbbn_article_pitch&amp;impression=d26574da-7a6a-41ac-a6dc-6537114ce8ce\"><strong>10 best stocks</strong></a> for investors to buy right now... and Goldman Sachs wasn't one of them! That's right -- they think these 10 stocks are even better buys.</p>\n<p><a href=\"http://infotron.fool.com/infotrack/click?url=https%3A%2F%2Fwww.fool.com%2Fmms%2Fmark%2Fe-foolcom-sa-bbn-static%3Faid%3D8867%26source%3Disaeditxt0010449%26ftm_cam%3Dsa-bbn-evergreen%26ftm_pit%3D6312%26ftm_veh%3Dbbn_article_pitch&amp;impression=d26574da-7a6a-41ac-a6dc-6537114ce8ce\" class=\"ticker_pitch\"><strong>Click here</strong></a> to learn about these picks!</p>\n<p><em>*Stock Advisor returns as of November 6, 2017</em></p>"
+                ],
+                "pattern": ".*"
+              },
+              "id": {
+                "$id": "#/properties/results/items/properties/pitch/properties/id",
+                "type": "integer",
+                "title": "The Id Schema",
+                "default": 0,
+                "examples": [6115]
+              }
+            }
+          },
+          "links": {
+            "$id": "#/properties/results/items/properties/links",
+            "type": "object",
+            "title": "The Links Schema",
+            "required": ["self", "presentation", "content-sequence"],
+            "properties": {
+              "self": {
+                "$id": "#/properties/results/items/properties/links/properties/self",
+                "type": "string",
+                "title": "The Self Schema",
+                "default": "",
+                "examples": [
+                  "http://api.fool.com/api/content/f52c15f2-c5a9-11e7-8889-0050569d4be0"
+                ],
+                "pattern": ".*"
+              },
+              "presentation": {
+                "$id": "#/properties/results/items/properties/links/properties/presentation",
+                "type": "string",
+                "title": "The Presentation Schema",
+                "default": "",
+                "examples": [
+                  "https://www.fool.com/investing/2017/11/10/is-goldman-sachs-stock-worth-a-look.aspx"
+                ],
+                "pattern": ".*"
+              },
+              "content-sequence": {
+                "$id": "#/properties/results/items/properties/links/properties/content-sequence",
+                "type": "string",
+                "title": "The Content-sequence Schema",
+                "default": "",
+                "examples": [
+                  "http://api.fool.com/api/content-sequences/containing/f52c15f2-c5a9-11e7-8889-0050569d4be0"
+                ],
+                "pattern": ".*"
+              }
+            }
+          },
+          "byline": {
+            "$id": "#/properties/results/items/properties/byline",
+            "type": "string",
+            "title": "The Byline Schema",
+            "default": "",
+            "examples": ["John Maxfield"],
+            "pattern": ".*"
+          }
+        }
+      }
+    },
+    "expandable": {
+      "$id": "#/properties/expandable",
+      "type": "array",
+      "title": "The Expandable Schema",
+      "items": {
+        "$id": "#/properties/expandable/items",
+        "type": "string",
+        "title": "The Items Schema",
+        "default": "",
+        "examples": [
+          "instruments",
+          "recommendations",
+          "bureaus",
+          "collections",
+          "tags"
+        ],
+        "pattern": ".*"
+      }
+    },
+    "expanded": {
+      "$id": "#/properties/expanded",
+      "type": "array",
+      "title": "The Expanded Schema",
+      "items": {
+        "$id": "#/properties/expanded/items",
+        "type": "string",
+        "title": "The Items Schema",
+        "default": "",
+        "examples": [
+          "instruments",
+          "tags",
+          "bureaus",
+          "collections",
+          "recommendations"
+        ],
+        "pattern": ".*"
+      }
+    }
+  }
+}
