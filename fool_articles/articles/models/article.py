@@ -20,23 +20,48 @@ class Article:
                  video, pitch, links,
                  byline
                  ):
-        pass
+        self.disclosure = disclosure
+        self.promo = promo
+        self.body = body
+        self.visibility = visibility
+        self.article_type = article_type
+        self.publish_at = publish_at
+        self.path = path
+        self.static_page = static_page
+        self.author_override = author_override
+        self.uuid = uuid
+        self.created = created
+        self.headline = headline
+        self.product_id = product_id
+        self.instruments = instruments
+        self.authors = authors
+        self.bureau = bureau
+        self.collection = collection
+        self.tags = tags
+        self.recommendations = recommendations
+        self.images = images
+        self.video = video
+        self.pitch = pitch
+        self.links = links
+        self.byline = byline
 
 
 class ArticleManager:
 
     @classmethod
     def get_articles(cls, slug=None) -> List[Article]:
-        results = cls.get_articles_page_from_json()['results']
+        # Requirement:
+        # Get the first article whose tag matches the param
+        results = cls._get_articles_page_from_json()['results']
         if not slug:
-            return results
-
-        return list(
-            filter(lambda article: article['tags'] == slug, results)
-        )
+            return [Article(**result) for result in results]
+        for result in results:
+            if slug in [tag['slug'] for tag in result['tags']]:
+                return [Article(**result)]
+        return []
 
     @classmethod
-    def get_articles_page_from_json(
+    def _get_articles_page_from_json(
             cls, json_path='content-api/content_api.json'
     ):
         if not os.path.exists(json_path):
