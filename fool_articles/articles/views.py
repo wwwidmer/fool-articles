@@ -7,7 +7,12 @@ from .serializers import serialize_article
 
 
 def index(request):
-    context = {}
+    headliners = ArticleManager.get_articles(slug="10-promise")
+
+    context = {
+        "headline_article": headliners[0],
+        "articles": ArticleManager.get_articles()
+    }
     return render(request, 'index.html', context)
 
 

@@ -7,7 +7,7 @@ def test_index(rf):
     request = rf.get("/")
     response = index(request)
 
-    assert 'This is the index' in str(response.content)
+    assert 'main-article' in str(response.content)
 
 
 def test_article_view(rf):
@@ -19,4 +19,18 @@ def test_article_view(rf):
 
     assert 'articles' in content
     assert len(content['articles']) > 0
+    assert content['articles'][0] is not None
+
+
+def test_article_view_slug(rf):
+    request = rf.get("/article/10-promise")
+    view = ArticleView()
+    view.kwargs = {
+        'slug': '10-promise'
+    }
+    response = view.get(request)
+    content = json.loads(response.content)
+
+    assert 'articles' in content
+    assert len(content['articles']) == 1
     assert content['articles'][0] is not None
