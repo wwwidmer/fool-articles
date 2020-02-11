@@ -1,7 +1,20 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <div class="row" id="main-article">
+    {{ headline_article.headline }}
+    {{ headline_article.promo }}
+    <a href="{% url 'article-detail' uuid=headline_article.uuid %}"> Read more </a>
+    </div>
+  
+  <div class="row">
+    {% for article in articles %}
+    <div class="six columns">
+      {{ article.headline }}
+      {{ article.promo }}
+          <a href="{% url 'article-detail' uuid=article.uuid %}"> Read more </a>
+    </div>
 
-
-{% block content %}
-This is the index
-
+    {% endfor %}
+  </div>
+</div>
 {% endblock %}

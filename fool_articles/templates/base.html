@@ -3,11 +3,34 @@
   <head> </head>
 
   <body>
-    {% block content %} {% endblock %}
+    <div class="container">
+      <nav class="row">
+        <div class="five columns">
+          <a href="/"> Home </a>
+        </div>
+        <div class="four columns"></div>
+      </nav>
+
+      {% block content %} {% endblock %}
+
+      <footer></footer>
+    </div>
   </body>
 
   {% load static %}
   <script src="{% static 'app.js' %}"></script>
+
+  <link
+    rel="stylesheet"
+    text="text/css"
+    href="{% static 'stylesheets/skeleton.css' %}"
+  />
+
+  <link
+    rel="stylesheet"
+    text="text/css"
+    href="{% static 'stylesheets/normalize.css' %}"
+  />
   <link
     rel="stylesheet"
     text="text/css"
