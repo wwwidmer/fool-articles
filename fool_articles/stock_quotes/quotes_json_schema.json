@@ -1,0 +1,993 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "array",
+  "title": "The Root Schema",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": [
+      "CompanyName",
+      "Symbol",
+      "Exchange",
+      "ExchangeName",
+      "IsoAlpha2CountryCode",
+      "IsoAlpha3CountryCode",
+      "Sector",
+      "Industry",
+      "Description",
+      "CurrencyCode",
+      "Year1ForwardEPSEstimate",
+      "Year2ForwardEPSEstimate",
+      "InstrumentId",
+      "ShortInterest",
+      "Volume",
+      "SharesOutstanding",
+      "AverageVolume",
+      "PriceToEarningsRatio",
+      "ReturnOnEquity",
+      "LastTradeDate",
+      "ExDivDate",
+      "DivPayDate",
+      "Change",
+      "ClosePrice",
+      "CurrentPrice",
+      "OpenPrice",
+      "MarketCap",
+      "MarketCapChange",
+      "EarningsPerShare",
+      "PercentChange",
+      "DailyRange",
+      "FiftyTwoWeekRange",
+      "AnnualDividend",
+      "DividendYield",
+      "PercentOfSharesTraded",
+      "AssetClass",
+      "ChartUrl",
+      "IsRealTime",
+      "Bid",
+      "Ask",
+      "AskYield",
+      "BidYield",
+      "MaturityDate",
+      "OpenYield",
+      "PreviousYield",
+      "OpenInterest",
+      "SeoName",
+      "IdcMdgId",
+      "Website",
+      "Beta3Y",
+      "HomeCountryCode",
+      "GrossMargin",
+      "RevenueGrowth"
+    ],
+    "properties": {
+      "CompanyName": {
+        "$id": "#/items/properties/CompanyName",
+        "type": "string",
+        "title": "The Companyname Schema",
+        "default": "",
+        "examples": [
+          "Goldman Sachs"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "Symbol": {
+        "$id": "#/items/properties/Symbol",
+        "type": "string",
+        "title": "The Symbol Schema",
+        "default": "",
+        "examples": [
+          "GS"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "Exchange": {
+        "$id": "#/items/properties/Exchange",
+        "type": "string",
+        "title": "The Exchange Schema",
+        "default": "",
+        "examples": [
+          "NYSE"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "ExchangeName": {
+        "$id": "#/items/properties/ExchangeName",
+        "type": "string",
+        "title": "The Exchangename Schema",
+        "default": "",
+        "examples": [
+          "NYSE"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "IsoAlpha2CountryCode": {
+        "$id": "#/items/properties/IsoAlpha2CountryCode",
+        "type": "string",
+        "title": "The Isoalpha2countrycode Schema",
+        "default": "",
+        "examples": [
+          "US"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "IsoAlpha3CountryCode": {
+        "$id": "#/items/properties/IsoAlpha3CountryCode",
+        "type": "string",
+        "title": "The Isoalpha3countrycode Schema",
+        "default": "",
+        "examples": [
+          "USA"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "Sector": {
+        "$id": "#/items/properties/Sector",
+        "type": "string",
+        "title": "The Sector Schema",
+        "default": "",
+        "examples": [
+          "Financials"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "Industry": {
+        "$id": "#/items/properties/Industry",
+        "type": "string",
+        "title": "The Industry Schema",
+        "default": "",
+        "examples": [
+          "Financial Services"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "Description": {
+        "$id": "#/items/properties/Description",
+        "type": "string",
+        "title": "The Description Schema",
+        "default": "",
+        "examples": [
+          "Global investment bank, securities and investment management firm that provides a wide range of services worldwide to a substantial and diversified client base that includes corporations, financial institutions, governments and high-net-worth individuals."
+        ],
+        "pattern": "^(.*)$"
+      },
+      "CurrencyCode": {
+        "$id": "#/items/properties/CurrencyCode",
+        "type": "string",
+        "title": "The Currencycode Schema",
+        "default": "",
+        "examples": [
+          "USD"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "Year1ForwardEPSEstimate": {
+        "$id": "#/items/properties/Year1ForwardEPSEstimate",
+        "type": "object",
+        "title": "The Year1forwardepsestimate Schema",
+        "required": [
+          "Amount",
+          "Currency"
+        ],
+        "properties": {
+          "Amount": {
+            "$id": "#/items/properties/Year1ForwardEPSEstimate/properties/Amount",
+            "type": "number",
+            "title": "The Amount Schema",
+            "default": 0.0,
+            "examples": [
+              17.91
+            ]
+          },
+          "Currency": {
+            "$id": "#/items/properties/Year1ForwardEPSEstimate/properties/Currency",
+            "type": "integer",
+            "title": "The Currency Schema",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          }
+        }
+      },
+      "Year2ForwardEPSEstimate": {
+        "$id": "#/items/properties/Year2ForwardEPSEstimate",
+        "type": "object",
+        "title": "The Year2forwardepsestimate Schema",
+        "required": [
+          "Amount",
+          "Currency"
+        ],
+        "properties": {
+          "Amount": {
+            "$id": "#/items/properties/Year2ForwardEPSEstimate/properties/Amount",
+            "type": "number",
+            "title": "The Amount Schema",
+            "default": 0.0,
+            "examples": [
+              18.87
+            ]
+          },
+          "Currency": {
+            "$id": "#/items/properties/Year2ForwardEPSEstimate/properties/Currency",
+            "type": "integer",
+            "title": "The Currency Schema",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          }
+        }
+      },
+      "InstrumentId": {
+        "$id": "#/items/properties/InstrumentId",
+        "type": "integer",
+        "title": "The Instrumentid Schema",
+        "default": 0,
+        "examples": [
+          203781
+        ]
+      },
+      "ShortInterest": {
+        "$id": "#/items/properties/ShortInterest",
+        "type": "integer",
+        "title": "The Shortinterest Schema",
+        "default": 0,
+        "examples": [
+          6935945
+        ]
+      },
+      "Volume": {
+        "$id": "#/items/properties/Volume",
+        "type": "integer",
+        "title": "The Volume Schema",
+        "default": 0,
+        "examples": [
+          371675
+        ]
+      },
+      "SharesOutstanding": {
+        "$id": "#/items/properties/SharesOutstanding",
+        "type": "integer",
+        "title": "The Sharesoutstanding Schema",
+        "default": 0,
+        "examples": [
+          377201479
+        ]
+      },
+      "AverageVolume": {
+        "$id": "#/items/properties/AverageVolume",
+        "type": "integer",
+        "title": "The Averagevolume Schema",
+        "default": 0,
+        "examples": [
+          2571262
+        ]
+      },
+      "PriceToEarningsRatio": {
+        "$id": "#/items/properties/PriceToEarningsRatio",
+        "type": "number",
+        "title": "The Pricetoearningsratio Schema",
+        "default": 0.0,
+        "examples": [
+          12.5673
+        ]
+      },
+      "ReturnOnEquity": {
+        "$id": "#/items/properties/ReturnOnEquity",
+        "type": "number",
+        "title": "The Returnonequity Schema",
+        "default": 0.0,
+        "examples": [
+          11.3
+        ]
+      },
+      "LastTradeDate": {
+        "$id": "#/items/properties/LastTradeDate",
+        "type": "string",
+        "title": "The Lasttradedate Schema",
+        "default": "",
+        "examples": [
+          "2017-11-10T15:26:50Z"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "ExDivDate": {
+        "$id": "#/items/properties/ExDivDate",
+        "type": "string",
+        "title": "The Exdivdate Schema",
+        "default": "",
+        "examples": [
+          "2017-11-29T00:00:00Z"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "DivPayDate": {
+        "$id": "#/items/properties/DivPayDate",
+        "type": "string",
+        "title": "The Divpaydate Schema",
+        "default": "",
+        "examples": [
+          "2017-12-28T00:00:00Z"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "Change": {
+        "$id": "#/items/properties/Change",
+        "type": "object",
+        "title": "The Change Schema",
+        "required": [
+          "Amount",
+          "Currency"
+        ],
+        "properties": {
+          "Amount": {
+            "$id": "#/items/properties/Change/properties/Amount",
+            "type": "number",
+            "title": "The Amount Schema",
+            "default": 0.0,
+            "examples": [
+              1.56
+            ]
+          },
+          "Currency": {
+            "$id": "#/items/properties/Change/properties/Currency",
+            "type": "integer",
+            "title": "The Currency Schema",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          }
+        }
+      },
+      "ClosePrice": {
+        "$id": "#/items/properties/ClosePrice",
+        "type": "object",
+        "title": "The Closeprice Schema",
+        "required": [
+          "Amount",
+          "Currency"
+        ],
+        "properties": {
+          "Amount": {
+            "$id": "#/items/properties/ClosePrice/properties/Amount",
+            "type": "number",
+            "title": "The Amount Schema",
+            "default": 0.0,
+            "examples": [
+              240.79
+            ]
+          },
+          "Currency": {
+            "$id": "#/items/properties/ClosePrice/properties/Currency",
+            "type": "integer",
+            "title": "The Currency Schema",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          }
+        }
+      },
+      "CurrentPrice": {
+        "$id": "#/items/properties/CurrentPrice",
+        "type": "object",
+        "title": "The Currentprice Schema",
+        "required": [
+          "Amount",
+          "Currency"
+        ],
+        "properties": {
+          "Amount": {
+            "$id": "#/items/properties/CurrentPrice/properties/Amount",
+            "type": "number",
+            "title": "The Amount Schema",
+            "default": 0.0,
+            "examples": [
+              242.35
+            ]
+          },
+          "Currency": {
+            "$id": "#/items/properties/CurrentPrice/properties/Currency",
+            "type": "integer",
+            "title": "The Currency Schema",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          }
+        }
+      },
+      "OpenPrice": {
+        "$id": "#/items/properties/OpenPrice",
+        "type": "object",
+        "title": "The Openprice Schema",
+        "required": [
+          "Amount",
+          "Currency"
+        ],
+        "properties": {
+          "Amount": {
+            "$id": "#/items/properties/OpenPrice/properties/Amount",
+            "type": "number",
+            "title": "The Amount Schema",
+            "default": 0.0,
+            "examples": [
+              241.69
+            ]
+          },
+          "Currency": {
+            "$id": "#/items/properties/OpenPrice/properties/Currency",
+            "type": "integer",
+            "title": "The Currency Schema",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          }
+        }
+      },
+      "MarketCap": {
+        "$id": "#/items/properties/MarketCap",
+        "type": "object",
+        "title": "The Marketcap Schema",
+        "required": [
+          "Amount",
+          "Currency"
+        ],
+        "properties": {
+          "Amount": {
+            "$id": "#/items/properties/MarketCap/properties/Amount",
+            "type": "number",
+            "title": "The Amount Schema",
+            "default": 0.0,
+            "examples": [
+              91414778435.65
+            ]
+          },
+          "Currency": {
+            "$id": "#/items/properties/MarketCap/properties/Currency",
+            "type": "integer",
+            "title": "The Currency Schema",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          }
+        }
+      },
+      "MarketCapChange": {
+        "$id": "#/items/properties/MarketCapChange",
+        "type": "object",
+        "title": "The Marketcapchange Schema",
+        "required": [
+          "Amount",
+          "Currency"
+        ],
+        "properties": {
+          "Amount": {
+            "$id": "#/items/properties/MarketCapChange/properties/Amount",
+            "type": "number",
+            "title": "The Amount Schema",
+            "default": 0.0,
+            "examples": [
+              588434307.24
+            ]
+          },
+          "Currency": {
+            "$id": "#/items/properties/MarketCapChange/properties/Currency",
+            "type": "integer",
+            "title": "The Currency Schema",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          }
+        }
+      },
+      "EarningsPerShare": {
+        "$id": "#/items/properties/EarningsPerShare",
+        "type": "object",
+        "title": "The Earningspershare Schema",
+        "required": [
+          "Amount",
+          "Currency"
+        ],
+        "properties": {
+          "Amount": {
+            "$id": "#/items/properties/EarningsPerShare/properties/Amount",
+            "type": "number",
+            "title": "The Amount Schema",
+            "default": 0.0,
+            "examples": [
+              19.16
+            ]
+          },
+          "Currency": {
+            "$id": "#/items/properties/EarningsPerShare/properties/Currency",
+            "type": "integer",
+            "title": "The Currency Schema",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          }
+        }
+      },
+      "PercentChange": {
+        "$id": "#/items/properties/PercentChange",
+        "type": "object",
+        "title": "The Percentchange Schema",
+        "required": [
+          "Value"
+        ],
+        "properties": {
+          "Value": {
+            "$id": "#/items/properties/PercentChange/properties/Value",
+            "type": "number",
+            "title": "The Value Schema",
+            "default": 0.0,
+            "examples": [
+              0.0064786743635533
+            ]
+          }
+        }
+      },
+      "DailyRange": {
+        "$id": "#/items/properties/DailyRange",
+        "type": "object",
+        "title": "The Dailyrange Schema",
+        "required": [
+          "Minimum",
+          "Maximum"
+        ],
+        "properties": {
+          "Minimum": {
+            "$id": "#/items/properties/DailyRange/properties/Minimum",
+            "type": "object",
+            "title": "The Minimum Schema",
+            "required": [
+              "Amount",
+              "Currency"
+            ],
+            "properties": {
+              "Amount": {
+                "$id": "#/items/properties/DailyRange/properties/Minimum/properties/Amount",
+                "type": "number",
+                "title": "The Amount Schema",
+                "default": 0.0,
+                "examples": [
+                  241.42
+                ]
+              },
+              "Currency": {
+                "$id": "#/items/properties/DailyRange/properties/Minimum/properties/Currency",
+                "type": "integer",
+                "title": "The Currency Schema",
+                "default": 0,
+                "examples": [
+                  1
+                ]
+              }
+            }
+          },
+          "Maximum": {
+            "$id": "#/items/properties/DailyRange/properties/Maximum",
+            "type": "object",
+            "title": "The Maximum Schema",
+            "required": [
+              "Amount",
+              "Currency"
+            ],
+            "properties": {
+              "Amount": {
+                "$id": "#/items/properties/DailyRange/properties/Maximum/properties/Amount",
+                "type": "number",
+                "title": "The Amount Schema",
+                "default": 0.0,
+                "examples": [
+                  243.32
+                ]
+              },
+              "Currency": {
+                "$id": "#/items/properties/DailyRange/properties/Maximum/properties/Currency",
+                "type": "integer",
+                "title": "The Currency Schema",
+                "default": 0,
+                "examples": [
+                  1
+                ]
+              }
+            }
+          }
+        }
+      },
+      "FiftyTwoWeekRange": {
+        "$id": "#/items/properties/FiftyTwoWeekRange",
+        "type": "object",
+        "title": "The Fiftytwoweekrange Schema",
+        "required": [
+          "Minimum",
+          "Maximum"
+        ],
+        "properties": {
+          "Minimum": {
+            "$id": "#/items/properties/FiftyTwoWeekRange/properties/Minimum",
+            "type": "object",
+            "title": "The Minimum Schema",
+            "required": [
+              "Amount",
+              "Currency"
+            ],
+            "properties": {
+              "Amount": {
+                "$id": "#/items/properties/FiftyTwoWeekRange/properties/Minimum/properties/Amount",
+                "type": "number",
+                "title": "The Amount Schema",
+                "default": 0,
+                "examples": [
+                  194
+                ]
+              },
+              "Currency": {
+                "$id": "#/items/properties/FiftyTwoWeekRange/properties/Minimum/properties/Currency",
+                "type": "integer",
+                "title": "The Currency Schema",
+                "default": 0,
+                "examples": [
+                  1
+                ]
+              }
+            }
+          },
+          "Maximum": {
+            "$id": "#/items/properties/FiftyTwoWeekRange/properties/Maximum",
+            "type": "object",
+            "title": "The Maximum Schema",
+            "required": [
+              "Amount",
+              "Currency"
+            ],
+            "properties": {
+              "Amount": {
+                "$id": "#/items/properties/FiftyTwoWeekRange/properties/Maximum/properties/Amount",
+                "type": "number",
+                "title": "The Amount Schema",
+                "default": 0.0,
+                "examples": [
+                  255.15
+                ]
+              },
+              "Currency": {
+                "$id": "#/items/properties/FiftyTwoWeekRange/properties/Maximum/properties/Currency",
+                "type": "integer",
+                "title": "The Currency Schema",
+                "default": 0,
+                "examples": [
+                  1
+                ]
+              }
+            }
+          }
+        }
+      },
+      "AnnualDividend": {
+        "$id": "#/items/properties/AnnualDividend",
+        "type": "object",
+        "title": "The Annualdividend Schema",
+        "required": [
+          "Amount",
+          "Currency"
+        ],
+        "properties": {
+          "Amount": {
+            "$id": "#/items/properties/AnnualDividend/properties/Amount",
+            "type": "number",
+            "title": "The Amount Schema",
+            "default": 0,
+            "examples": [
+              3
+            ]
+          },
+          "Currency": {
+            "$id": "#/items/properties/AnnualDividend/properties/Currency",
+            "type": "integer",
+            "title": "The Currency Schema",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          }
+        }
+      },
+      "DividendYield": {
+        "$id": "#/items/properties/DividendYield",
+        "type": "object",
+        "title": "The Dividendyield Schema",
+        "required": [
+          "Value"
+        ],
+        "properties": {
+          "Value": {
+            "$id": "#/items/properties/DividendYield/properties/Value",
+            "type": "number",
+            "title": "The Value Schema",
+            "default": 0.0,
+            "examples": [
+              0.012459
+            ]
+          }
+        }
+      },
+      "PercentOfSharesTraded": {
+        "$id": "#/items/properties/PercentOfSharesTraded",
+        "type": "object",
+        "title": "The Percentofsharestraded Schema",
+        "required": [
+          "Value"
+        ],
+        "properties": {
+          "Value": {
+            "$id": "#/items/properties/PercentOfSharesTraded/properties/Value",
+            "type": "number",
+            "title": "The Value Schema",
+            "default": 0.0,
+            "examples": [
+              0.000985348734541945
+            ]
+          }
+        }
+      },
+      "AssetClass": {
+        "$id": "#/items/properties/AssetClass",
+        "type": "integer",
+        "title": "The Assetclass Schema",
+        "default": 0,
+        "examples": [
+          1
+        ]
+      },
+      "ChartUrl": {
+        "$id": "#/items/properties/ChartUrl",
+        "type": "string",
+        "title": "The Charturl Schema",
+        "default": "",
+        "examples": [
+          ""
+        ],
+        "pattern": "^(.*)$"
+      },
+      "IsRealTime": {
+        "$id": "#/items/properties/IsRealTime",
+        "type": "boolean",
+        "title": "The Isrealtime Schema",
+        "default": false,
+        "examples": [
+          true
+        ]
+      },
+      "Bid": {
+        "$id": "#/items/properties/Bid",
+        "type": "object",
+        "title": "The Bid Schema",
+        "required": [
+          "Amount",
+          "Currency"
+        ],
+        "properties": {
+          "Amount": {
+            "$id": "#/items/properties/Bid/properties/Amount",
+            "type": "number",
+            "title": "The Amount Schema",
+            "default": 0.0,
+            "examples": [
+              241.92
+            ]
+          },
+          "Currency": {
+            "$id": "#/items/properties/Bid/properties/Currency",
+            "type": "integer",
+            "title": "The Currency Schema",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          }
+        }
+      },
+      "Ask": {
+        "$id": "#/items/properties/Ask",
+        "type": "object",
+        "title": "The Ask Schema",
+        "required": [
+          "Amount",
+          "Currency"
+        ],
+        "properties": {
+          "Amount": {
+            "$id": "#/items/properties/Ask/properties/Amount",
+            "type": "number",
+            "title": "The Amount Schema",
+            "default": 0.0,
+            "examples": [
+              242.02
+            ]
+          },
+          "Currency": {
+            "$id": "#/items/properties/Ask/properties/Currency",
+            "type": "integer",
+            "title": "The Currency Schema",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          }
+        }
+      },
+      "AskYield": {
+        "$id": "#/items/properties/AskYield",
+        "type": "object",
+        "title": "The Askyield Schema",
+        "required": [
+          "Value"
+        ],
+        "properties": {
+          "Value": {
+            "$id": "#/items/properties/AskYield/properties/Value",
+            "type": "integer",
+            "title": "The Value Schema",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          }
+        }
+      },
+      "BidYield": {
+        "$id": "#/items/properties/BidYield",
+        "type": "object",
+        "title": "The Bidyield Schema",
+        "required": [
+          "Value"
+        ],
+        "properties": {
+          "Value": {
+            "$id": "#/items/properties/BidYield/properties/Value",
+            "type": "integer",
+            "title": "The Value Schema",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          }
+        }
+      },
+      "MaturityDate": {
+        "$id": "#/items/properties/MaturityDate",
+        "type": "string",
+        "title": "The Maturitydate Schema",
+        "default": "",
+        "examples": [
+          "0001-01-01T00:00:00Z"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "OpenYield": {
+        "$id": "#/items/properties/OpenYield",
+        "type": "object",
+        "title": "The Openyield Schema",
+        "required": [
+          "Value"
+        ],
+        "properties": {
+          "Value": {
+            "$id": "#/items/properties/OpenYield/properties/Value",
+            "type": "integer",
+            "title": "The Value Schema",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          }
+        }
+      },
+      "PreviousYield": {
+        "$id": "#/items/properties/PreviousYield",
+        "type": "object",
+        "title": "The Previousyield Schema",
+        "required": [
+          "Value"
+        ],
+        "properties": {
+          "Value": {
+            "$id": "#/items/properties/PreviousYield/properties/Value",
+            "type": "integer",
+            "title": "The Value Schema",
+            "default": 0,
+            "examples": [
+              0
+            ]
+          }
+        }
+      },
+      "OpenInterest": {
+        "$id": "#/items/properties/OpenInterest",
+        "type": "integer",
+        "title": "The Openinterest Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "SeoName": {
+        "$id": "#/items/properties/SeoName",
+        "type": "string",
+        "title": "The Seoname Schema",
+        "default": "",
+        "examples": [
+          "goldman-sachs"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "IdcMdgId": {
+        "$id": "#/items/properties/IdcMdgId",
+        "type": ["integer", "null"],
+        "title": "The Idcmdgid Schema",
+        "default": 0,
+        "examples": [
+          266507
+        ]
+      },
+      "Website": {
+        "$id": "#/items/properties/Website",
+        "type": "string",
+        "title": "The Website Schema",
+        "default": "",
+        "examples": [
+          "http://www.gs.com/"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "Beta3Y": {
+        "$id": "#/items/properties/Beta3Y",
+        "type": "number",
+        "title": "The Beta3y Schema",
+        "default": 0.0,
+        "examples": [
+          1.47
+        ]
+      },
+      "HomeCountryCode": {
+        "$id": "#/items/properties/HomeCountryCode",
+        "type": ["null", "string"],
+        "title": "The Homecountrycode Schema",
+        "default": null,
+        "examples": [
+          null
+        ]
+      },
+      "GrossMargin": {
+        "$id": "#/items/properties/GrossMargin",
+        "type": "number",
+        "title": "The Grossmargin Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "RevenueGrowth": {
+        "$id": "#/items/properties/RevenueGrowth",
+        "type": "number",
+        "title": "The Revenuegrowth Schema",
+        "default": 0.0,
+        "examples": [
+          -3.8
+        ]
+      }
+    }
+  }
+}
