@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block content %} {% if articles|length > 0 %}
+<div class="header">
+  <h2>{{ articles.0.headline }}</h2>
+</div>
+
+<div class="content">
+  {% autoescape off %} {{ articles.0.body }} {% endautoescape %}
+</div>
+
+{% else %}
+
+<div class="404">
+  Could not find this article
+</div>
+
+{% endif %} {% endblock %}
