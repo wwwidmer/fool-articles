@@ -3,6 +3,17 @@ import pytest
 from articles.models.article import ArticleManager
 
 
+def test_article_manager_find_article_by_uuid():
+    articles = ArticleManager.get_articles(uuid='this-doesnt-exist-i-hope')
+
+    assert len(articles) == 0
+
+    articles = ArticleManager.get_articles(
+        uuid='d6397ee8-c4da-11e7-a496-0050569d4be0')
+
+    assert len(articles) == 1
+
+
 def test_article_manager_finds_first_article_by_slug():
     articles = ArticleManager.get_articles(slug='this-doesnt-exist-i-hope')
 
