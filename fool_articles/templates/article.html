@@ -1,13 +1,42 @@
-{% extends "base.html" %} {% block content %} {% if articles|length > 0 %}
-<div class="header">
-  <h2>{{ articles.0.headline }}</h2>
-</div>
+{% extends "base.html" %}
+{% block title %}
+{% if articles|length > 0 %}
+<title> {{ articles.0.headline }} </title>
+{% endif %}
+{% endblock %}
+{% block content %} {% if articles|length > 0 %}
 
-<div class="content">
-  {% autoescape off %} {{ articles.0.body }} {% endautoescape %}
-</div>
+<div class="container">
+  <div class="main-content nine columns">
+    <div class="header">
+      <h2>{{ articles.0.headline }}</h2>
+    </div>
 
-{% else %}
+    <div class="content">
+      {% autoescape off %} {{ articles.0.body }} {% endautoescape %}
+    </div>
+    <div class="content-footer">
+      <form class="comment-form">
+	<textarea placeholder="Write a comment..."> </textarea>
+	<button type="submit"> Submit comment </button>
+      </form>
+      </div>
+  </div>
+  {% if stock_quotes|length > 0 %}
+  <div class="sidebar three columns">
+    {% for stock_quote in stock_quotes %}
+    <div class="row">
+      {{ stock_quote.company_name }} {{ stock_quote.current_price.Amount }}
+      {{ stock_quote.percent_change.Value }} {{ stock_quote.change.Amount }}
+    </div>
+    {% endfor %}
+    <div class="row">
+      <button>See different stocks</button>
+    </div>
+  </div>
+
+</div>
+{% endif %} {% else %}
 
 <div class="404">
   Could not find this article
