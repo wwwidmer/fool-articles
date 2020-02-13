@@ -1,19 +1,38 @@
 (function() {
-  const BASE_URL = "/";
+  function getCookie(name) {
+    // Verbatim from django docs on csrf
+    // https://docs.djangoproject.com/en/3.0/ref/csrf/
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== "") {
+      var cookies = document.cookie.split(";");
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        // Does this cookie string begin with the name we want?
+        if (cookie.substring(0, name.length + 1) === name + "=") {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
+
+  const BASE_URL = "/article";
   const ArticleAPI = {
     comments: {
-      getComments: () => {
-        return fetch(`${BASE_URL}comments/`)
-          .then(response => response.json())
-          .then(responseJson => {
-            // Show some elements
-          });
+      getComments: articleId => {
+        return fetch(`${BASE_URL}/${articleId}/comments/list`).then(response =>
+          response.json()
+        );
       },
-      submitComment: ({ text, username }) => {
-        return fetch(`${BASE_URL}comments/`, {
+      submitComment: ({ text, username, articleId }) => {
+        const csrfToken = getCookie("csrftoken");
+        return fetch(`${BASE_URL}/${articleId}/comments/`, {
           method: "POST",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "X-CSRFToken": csrfToken,
+            "X-Requested-With": "XMLHttpRequest"
           },
           body: JSON.stringify({
             text,
@@ -28,6 +47,31 @@
     }
   };
 
+  function getCommentsHandler(data) {
+    const comments = data.comment_list;
+    const commentContainer = document.getElementById("comment-container");
+    comments.forEach(function(comment) {
+      const commentElement = document.createElement("div");
+      const text = document.createElement("div");
+      text.innerHTML = comment.text;
+      const username = document.createElement("div");
+      username.innerHTML = comment.username;
+
+      const createdAt = document.createElement("div");
+      createdAt.innerHTML = comment.created_at;
+
+      commentElement.appendChild(username);
+      commentElement.appendChild(createdAt);
+      commentElement.appendChild(text);
+
+      commentContainer.appendChild(commentElement);
+    });
+  }
+
+  if (Article != undefined && Article.id != null) {
+    ArticleAPI.comments.getComments(Article.id).then(getCommentsHandler);
+  }
+
   const submitCommentButton = document.querySelector("#submit-comment");
   if (submitCommentButton != null) {
     submitCommentButton.addEventListener("click", function(e) {
@@ -38,7 +82,17 @@
         // TODO - add error class to textarea
         return;
       }
-      ArticleAPI.comments.submitComment({ username, text: commentText });
+      ArticleAPI.comments
+        .submitComment({
+          username,
+          text: commentText,
+          articleId: Article.id
+        })
+        .then(() => {
+          window.alert("Successfully submitted comment!");
+          document.getElementById("comment-container").innerHTML = "";
+          ArticleAPI.comments.getComments(Article.id).then(getCommentsHandler);
+        });
     });
   }
 })();
