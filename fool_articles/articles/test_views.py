@@ -1,6 +1,9 @@
+import pytest
 import json
 
-from articles.views import index, ArticleView
+from articles.views import ArticleView
+
+from .models.comment import Comment
 
 
 def test_index(client):
@@ -68,3 +71,38 @@ def test_article_return_template(rf):
         'Content-Type', 'text/html; charset=utf-8'
     )
     assert '<!DOCTYPE html>' in str(response.content)
+
+
+@pytest.mark.parametrize("username", ["billy", None, ""])
+@pytest.mark.django_db
+def test_comment_post(client, username):
+    data = {
+        "text": "Yes this is great I really like \
+            this program, great job self"
+    }
+    if username is not None:
+        data['username'] = username
+    response = client.post(
+        "/article/c3po/comments/", data=data
+    )
+
+    assert response.status_code == 200
+    assert response.json()['success']
+
+    new_comment = Comment.objects.filter(article_uuid='c3po').all()[0]
+    assert new_comment is not None
+    assert new_comment.text == data['text']
+
+    if username == '':
+        assert new_comment.username is None
+    else:
+        assert new_comment.username == data.get('username')
+
+
+def test_comment_invalid(client):
+    response = client.post(
+        "/article/3/comments/", data={
+            "garbage": "foo"
+        })
+
+    assert response.status_code == 400

@@ -1,7 +1,7 @@
 from random import sample
 
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseBadRequest
 from django.views import View
 from django.views.generic import ListView
 
@@ -10,6 +10,7 @@ from stock_quotes.serializers import serialize_quote
 
 from .models.comment import Comment
 from .models.article import ArticleManager
+from .forms import CommentForm
 from .serializers import serialize_article
 
 
@@ -55,7 +56,21 @@ class ArticleView(View):
 
 
 class CommentView(View):
-    pass
+    form_class = CommentForm
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            Comment.objects.create(
+                article_uuid=self.kwargs['uuid'],
+                text=form.cleaned_data['text'],
+                username=form.cleaned_data['username']
+            )
+            return JsonResponse(data={
+                "success": True,
+            })
+
+        return HttpResponseBadRequest()
 
 
 class CommentListView(ListView):
