@@ -83,7 +83,8 @@ def test_comment_post(client, username):
     if username is not None:
         data['username'] = username
     response = client.post(
-        "/article/c3po/comments/", data=data
+        "/article/c3po/comments/", json.dumps(data),
+        content_type="application/json"
     )
 
     assert response.status_code == 200
@@ -101,8 +102,8 @@ def test_comment_post(client, username):
 
 def test_comment_invalid(client):
     response = client.post(
-        "/article/3/comments/", data={
+        "/article/3/comments/", data=json.dumps({
             "garbage": "foo"
-        })
+        }), content_type="application/json")
 
     assert response.status_code == 400

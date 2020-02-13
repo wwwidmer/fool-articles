@@ -1,3 +1,4 @@
+import json
 from random import sample
 
 from django.shortcuts import render
@@ -11,7 +12,7 @@ from stock_quotes.serializers import serialize_quote
 from .models.comment import Comment
 from .models.article import ArticleManager
 from .forms import CommentForm
-from .serializers import serialize_article
+from .serializers import serialize_article, serialize_comment
 
 
 def index(request):
@@ -59,7 +60,9 @@ class CommentView(View):
     form_class = CommentForm
 
     def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST)
+        data = json.loads(request.body)
+        form = self.form_class(data)
+
         if form.is_valid():
             Comment.objects.create(
                 article_uuid=self.kwargs['uuid'],
@@ -82,7 +85,10 @@ class CommentListView(ListView):
 
     def render_to_response(self, context, **response_kwargs):
         data = {
-            "comment_list": [],
+            "comment_list": [
+                serialize_comment(comment)
+                for comment in context['comment_list']
+            ],
             "page_obj": None,
             "is_paginated": False,
 

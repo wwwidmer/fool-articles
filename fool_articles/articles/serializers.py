@@ -11,3 +11,11 @@ def serialize_article(article):
         "body": article.body,
         "promo": article.promo
     }
+
+
+def serialize_comment(comment):
+    return {
+        "text": comment.text,
+        "username": comment.username,
+        "created_at": comment.created_at
+    }
