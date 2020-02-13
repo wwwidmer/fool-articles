@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.views import View
+from django.views.generic import ListView
 
 from stock_quotes.models import StockQuoteManager
 from stock_quotes.serializers import serialize_quote
 
+from .models.comment import Comment
 from .models.article import ArticleManager
 from .serializers import serialize_article
 
@@ -40,3 +42,28 @@ class ArticleView(View):
             return JsonResponse(context)
 
         return render(request, 'article.html', context)
+
+
+class CommentView(View):
+    pass
+
+
+class CommentListView(ListView):
+    model = Comment
+
+    def get_queryset(self):
+        comments = Comment.objects.filter(article_uuid=self.kwargs['uuid'])
+        return comments
+
+    def render_to_response(self, context, **response_kwargs):
+        data = {
+            "comment_list": [],
+            "page_obj": None,
+            "is_paginated": False,
+
+        }
+        return JsonResponse(
+            data,
+            **response_kwargs
+
+        )

@@ -8,4 +8,6 @@ urlpatterns = [
     path("article/<uuid>/",
          views.ArticleView.as_view(), name="article-detail"
          ),
+    path("article/<uuid>/comments", views.CommentListView.as_view()),
+    path("article/<uuid>/comments/", views.CommentView.as_view()),
 ]
