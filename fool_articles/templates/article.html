@@ -1,10 +1,6 @@
-{% extends "base.html" %}
-{% block title %}
-{% if articles|length > 0 %}
-<title> {{ articles.0.headline }} </title>
-{% endif %}
-{% endblock %}
-{% block content %} {% if articles|length > 0 %}
+{% extends "base.html" %} {% block title %} {% if articles|length > 0 %}
+<title>{{ articles.0.headline }}</title>
+{% endif %} {% endblock %} {% block content %} {% if articles|length > 0 %}
 
 <div class="container">
   <div class="main-content nine columns">
@@ -17,24 +13,43 @@
     </div>
     <div class="content-footer">
       <form class="comment-form">
-	<textarea placeholder="Write a comment..."> </textarea>
-	<button type="submit"> Submit comment </button>
+        <div class="row">
+	  <label for="comment-username"> Name (optional) </label>
+          <input
+            id="comment-username"
+            type="text"
+            placeholder="..."
+          >
+          </input>
+        </div>
+        <div class="row">
+          <label for="comment-text"> Comment </label>
+          <textarea id="comment-text" class="u-full-width" placeholder="Write a comment...">
+          </textarea>
+        </div>
+        <div class="row">
+          <button id="submit-comment" class="button-primary">
+            Submit Comment
+          </button>
+        </div>
       </form>
-      </div>
+      <div id="comment-container"></div>
+    </div>
   </div>
   {% if stock_quotes|length > 0 %}
   <div class="sidebar three columns">
-    {% for stock_quote in stock_quotes %}
-    <div class="row">
-      {{ stock_quote.company_name }} {{ stock_quote.current_price.Amount }}
-      {{ stock_quote.percent_change.Value }} {{ stock_quote.change.Amount }}
+    <div id="stock-list">
+      {% for stock_quote in stock_quotes %}
+      <div class="row stock-row">
+        {{ stock_quote.company_name }} {{ stock_quote.current_price.Amount }}
+	{{ stock_quote.percent_change.Value }} {{ stock_quote.change.Amount }}
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
     <div class="row">
-      <button>See different stocks</button>
+      <button class="shuffle-button">Shuffle stocks</button>
     </div>
   </div>
-
 </div>
 {% endif %} {% else %}
 
@@ -42,4 +57,8 @@
   Could not find this article
 </div>
 
-{% endif %} {% endblock %}
+{% endif %} {% endblock %} {% load static %} {% block scripts %}
+<script async defer src="{% static 'shuffle_quotes.js' %}"></script>
+<script async defer src="{% static 'article_api.js' %}"></script>
+
+{% endblock %}

@@ -18,9 +18,9 @@
       <footer></footer>
     </div>
   </body>
-
   {% load static %}
-  <script src="{% static 'app.js' %}"></script>
+  {% block scripts %} {% endblock %}
+
 
   <link
     rel="stylesheet"
