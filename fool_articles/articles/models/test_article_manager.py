@@ -9,7 +9,8 @@ def test_article_manager_find_article_by_uuid():
     assert len(articles) == 0
 
     articles = ArticleManager.get_articles(
-        uuid='d6397ee8-c4da-11e7-a496-0050569d4be0')
+        uuid='d6397ee8-c4da-11e7-a496-0050569d4be0'
+    )
 
     assert len(articles) == 1
 
@@ -29,6 +30,16 @@ def test_article_manager_loads_list_of_objects():
     articles = ArticleManager.get_articles()
 
     assert len(articles) > 0
+
+
+def test_article_manager_exclude_uuid_filter():
+    excluded_uuid = 'd6397ee8-c4da-11e7-a496-0050569d4be0'
+    articles = ArticleManager.get_articles(
+        exclude_uuid=excluded_uuid
+    )
+    assert len(articles) == 9
+    for article in articles:
+        assert article.uuid != excluded_uuid
 
 
 def test_article_manager_raise_exception_if_invalid_content_api_path_given():

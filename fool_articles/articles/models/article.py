@@ -49,25 +49,34 @@ class Article:
 class ArticleManager:
 
     @classmethod
-    def get_articles(cls, slug=None, uuid=None) -> List[Article]:
+    def get_articles(
+            cls, slug=None, uuid=None, exclude_uuid=None
+    ) -> List[Article]:
         # Requirement:
         # Get the first article whose tag matches the param
+        # Get three articles
+        # (from a subset that doesn't include the first requirement)
         results = [
             Article(**result)
             for result in cls._get_articles_page_from_json()['results']
         ]
-        if slug or uuid:
+        if slug or uuid or exclude_uuid:
             assert not (
-                slug and uuid
-            ), 'Finding by both slug and uuid is not supported'
+                slug and uuid or slug and exclude_uuid or uuid and exclude_uuid
+            ), 'Find by more than one filter is not supported'
             if slug:
                 def filter_func(result): return slug in [
                     tag['slug'] for tag in result.tags]
             if uuid:
                 def filter_func(result): return result.uuid == uuid
+            if exclude_uuid:
+                def filter_func(result): return result.uuid != exclude_uuid
             filtered_results = filter(filter_func, results)
+
             try:
-                return [next(filtered_results)]
+                if uuid or slug:
+                    return [next(filtered_results)]
+                return list(filtered_results)
             except StopIteration:
                 return []
 

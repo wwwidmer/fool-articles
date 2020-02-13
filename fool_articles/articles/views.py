@@ -1,3 +1,5 @@
+from random import sample
+
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.views import View
@@ -14,9 +16,17 @@ from .serializers import serialize_article
 def index(request):
     headliners = ArticleManager.get_articles(slug="10-promise")
 
+    random_articles = []
+    if len(headliners):
+        articles = ArticleManager.get_articles(
+            exclude_uuid=headliners[0].uuid
+        )
+        random_articles = sample(articles, 3)
+
     context = {
-        "headline_article": headliners[0],
-        "articles": ArticleManager.get_articles()[:3]
+        "headline_article": headliners[0]
+        if len(headliners) else None,
+        "articles": random_articles
     }
     return render(request, 'index.html', context)
 

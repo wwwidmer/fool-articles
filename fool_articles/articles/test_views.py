@@ -3,11 +3,14 @@ import json
 from articles.views import index, ArticleView
 
 
-def test_index(rf):
-    request = rf.get("/")
-    response = index(request)
+def test_index(client):
+    response = client.get("/")
 
     assert 'main-article' in str(response.content)
+
+    assert response.context['headline_article'] is not None
+    assert len(response.context['articles']) == 3
+    # TODO How to test the randomness
 
 
 def test_article_view(rf):
