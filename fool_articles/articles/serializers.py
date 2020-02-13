@@ -1,6 +1,7 @@
 
 def serialize_article(article):
     return {
+        "uuid": article.uuid,
         "headline": article.headline,
         "tags": article.tags,
         "authors": article.authors,

@@ -13,6 +13,7 @@
     </div>
     <div class="content-footer">
       <form class="comment-form">
+	{% csrf_token %}
         <div class="row">
 	  <label for="comment-username"> Name (optional) </label>
           <input
@@ -58,6 +59,12 @@
 </div>
 
 {% endif %} {% endblock %} {% load static %} {% block scripts %}
+<script>
+  const Article = {
+    id:"{{ articles.0.uuid }}"
+  };
+</script>
+
 <script async defer src="{% static 'shuffle_quotes.js' %}"></script>
 <script async defer src="{% static 'article_api.js' %}"></script>
 
