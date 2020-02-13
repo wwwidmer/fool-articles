@@ -1,17 +1,15 @@
 ## Setup
 
-install pipenv
+Requirements:
+pip
+bash
 
-`pip install pipenv`
+`./quick_start.sh`
 
-`pipenv sync`
+This will install pipenv, dependencies, create environment files, run tests and initiate the development server.
 
-`pipenv run dev`
-
-
-
-
-
+Tested on linux mint 19.1 Cinnamon (4.0.1)
+Linux kernel 4.15.0-74-generic
 
 
 Below is the og project question;
