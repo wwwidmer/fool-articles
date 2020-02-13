@@ -6,6 +6,7 @@ verify_ssl = true
 [scripts]
 dev = 'python fool_articles/manage.py runserver'
 migrate = 'python fool_articles/manage.py migrate'
+test = 'pytest fool_articles/'
 
 [dev-packages]
 autopep8 = "*"

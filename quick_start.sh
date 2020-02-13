@@ -8,4 +8,4 @@ touch .env
 
 echo 'SECRET_KEY=supersecret' > .env
 
-pipenv run migrate && pipenv run dev
+pipenv run migrate && pipenv run test && pipenv run dev
