@@ -52,13 +52,16 @@
     const commentContainer = document.getElementById("comment-container");
     comments.forEach(function(comment) {
       const commentElement = document.createElement("div");
-      const text = document.createElement("div");
+      commentElement.className = "comment row";
+      const text = document.createElement("p");
       text.innerHTML = comment.text;
-      const username = document.createElement("div");
-      username.innerHTML = comment.username;
-
-      const createdAt = document.createElement("div");
-      createdAt.innerHTML = comment.created_at;
+      text.className = "comment-text";
+      const username = document.createElement("h5");
+      username.innerHTML = comment.username || "Anonymous";
+      username.className = "user";
+      const createdAt = document.createElement("span");
+      createdAt.innerHTML = new Date(comment.created_at).toLocaleString();
+      createdAt.className = "date";
 
       commentElement.appendChild(username);
       commentElement.appendChild(createdAt);
