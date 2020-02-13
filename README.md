@@ -1,3 +1,43 @@
+# Submission statement
+
+Hi all fools!
+
+Thanks for giving me the opprotunity to work on this.
+
+I stopped myself around ~10 hours; While I believe that all acceptance criteria have been met many things can be changed or improved upon!
+
+You'll notice a "notes.md" which is some of my initial impression on the project. These are jumbled notes and are just a showcase of how I start breaking things down.
+
+I did not use _any_ javascript frameworks - this is all pure browser JS! Therefore, I make zero claims about compatability. This works on recent versions of Firefox and Chrome. 
+In an ideal world an entire js build system would be used that ensure browser compatability.
+On the topic of JS -> Using types is superior; On a larger project, it is way more scalable to use flow or typescript. I didn't do that here because I didn't want to spend hours trying to make it work. Trade offs.
+
+
+I used the Skeleton CSS system; I'm not big on using this for larger projects but it is a no-frills way to get a grid system set up. [getskeleton.com]
+
+
+I'm the first to admit I don't have a great eye for design. I focused on my strengths for this project which were making a great foundation + ensuring correctness in as many places as possible. After hitting all functional requirements I began to work on making the webapp react to your eyes better - but I hit my time limit so I left it functionally ugly ;).
+
+Some things I'd work on given another few hours of time;
+- Discovery experience on the index page - the text only approach isn't great; I think images would look great here.
+- Frontend testing
+- Stock quote sidebar needs love, particularly it needs some assets and styling so a user knows what they're even looking at
+- Individual comments aren't all too bad but could use some more style
+- For a more scalable project, I'd place this django app in a docker container
+- UUIDs don't make pretty URLs - Slugification of the headline would, so I'd probably take a crack at making that a reality.
+- Database is set to the default django SQLite implementation - for a real project I'd switch to postgres rather quickly.
+- The tests aren't as unit-testy as I'd like - they regularly test one or two more levels of code than they should. I'd incorporate more method stubbing.
+- There are a few low hanging fruits for caching - namely reading those content-api json files on the backend, as well as loading the same article in the frontend.
+- A cool experiment might be to see how to incorporate GraphQL into this; I can definitely see a Graph relation between articles and comments.
+
+
+
+
+
+--
+WW
+
+
 ## Setup
 
 Requirements:
