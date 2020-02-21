@@ -24,9 +24,21 @@ def test_article_view(rf):
     response = view.get(request, HTTP_ACCEPT='application/json')
     content = json.loads(response.content)
 
-    assert 'articles' in content
-    assert len(content['articles']) > 0
-    assert content['articles'][0] is not None
+    assert 'articles_with_instruments' in content
+    assert len(content['articles_with_instruments']) > 0
+    assert content['articles_with_instruments'][0]["article"] is not None
+
+
+def test_article_view_gets_instruments(rf):
+    request = rf.get("/article", HTTP_ACCEPT='application/json')
+
+    view = ArticleView()
+    view.kwargs = {}
+    response = view.get(request, HTTP_ACCEPT='application/json')
+    content = json.loads(response.content)
+
+    assert content['articles_with_instruments'][0]["instruments"] is not None
+    assert len(content['articles_with_instruments'][0]["instruments"]) > 0
 
 
 def test_article_view_slug(rf):

@@ -42,12 +42,16 @@ class ArticleView(View):
         quotes = StockQuoteManager.get_quotes()[:3]
 
         context = {
-            "articles": [
-                serialize_article(article) for article in articles
+            "articles_with_instruments": [
+                {
+                    "article": serialize_article(article),
+                    "instruments": [
+                        serialize_quote(quote) for quote in StockQuoteManager.get_quotes(
+                            instrument_id=article.instrument_id
+                        )]
+
+                } for article in articles
             ],
-            "stock_quotes": [
-                serialize_quote(quote) for quote in quotes
-            ]
         }
 
         if request.META.get('HTTP_ACCEPT') == 'application/json':
