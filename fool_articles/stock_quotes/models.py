@@ -12,10 +12,11 @@ SCHEMA_PATH = os.path.join(os.path.dirname(
 
 class StockQuote:
     def __init__(self,
+                 InstrumentId,
                  CompanyName="", Symbol="", Exchange="NYSE",
                  Description="", PercentChange=0,
                  Change=0, CurrentPrice=0,
-                 **kwargs
+                 ** kwargs
                  ):
         self.company_name = CompanyName
         self.symbol = Symbol
@@ -23,15 +24,26 @@ class StockQuote:
         self.change = Change
         self.current_price = CurrentPrice
         self.percent_change = PercentChange
+        self.instrument_id = InstrumentId
 
 
 class StockQuoteManager:
 
     @classmethod
-    def get_quotes(cls) -> List[StockQuote]:
-        return [
-            StockQuote(**quote) for quote in cls._get_quotes_from_json()
-        ]
+    def get_quotes(cls, instrument_id=None) -> List[StockQuote]:
+
+        results = [StockQuote(**quote)
+                   for quote in cls._get_quotes_from_json()]
+        if instrument_id is not None:
+            def filter_func(
+                stock_quote
+            ):
+                return stock_quote.instrument_id == instrument_id
+
+            filtered_results = filter(filter_func, results)
+            return list(filtered_results)
+
+        return results
 
     @classmethod
     def _get_quotes_from_json(
